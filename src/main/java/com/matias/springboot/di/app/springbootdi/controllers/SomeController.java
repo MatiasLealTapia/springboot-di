@@ -15,8 +15,20 @@ import com.matias.springboot.di.app.springbootdi.services.ProductService;
 @RequestMapping("/api")
 public class SomeController {
 
+    /*
+     * @Autowired usado en la primera forma es lo mismo que usarlo junto a su constructor
+     */
     @Autowired
     private ProductService service;
+    
+    /* 
+     * Sugerencia -- Remover @Autowired no necesario --
+     * @Autowired solamente necesario cuando es un metodo "SET" o "SETTER" 
+     */
+    // @Autowired 
+    // public SomeController(ProductService service) {
+    //     this.service = service;
+    // }
 
     @GetMapping
     public List<Product> list() {
