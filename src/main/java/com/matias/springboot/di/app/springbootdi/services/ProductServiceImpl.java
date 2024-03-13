@@ -4,16 +4,16 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.matias.springboot.di.app.springbootdi.models.Product;
-import com.matias.springboot.di.app.springbootdi.repositories.ProductRepositoryImpl;
+import com.matias.springboot.di.app.springbootdi.repositories.ProductRepository;
 
-@Component
+@Service
 public class ProductServiceImpl implements ProductService {
 
     @Autowired
-    private ProductRepositoryImpl repository;
+    private ProductRepository repository;
 
     @Override
     public List<Product> findAll() {
